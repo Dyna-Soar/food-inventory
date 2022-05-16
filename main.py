@@ -1,9 +1,9 @@
 from fastapi import FastAPI
 
-from create_food import CreateFood
-from read_food import ReadFoods, ReadFood
-from update_food import UpdateFoodAmount, UpdateFoodPrice, UpdateFoodVat
-from delete_food import DeleteFood
+from ormconnector.create_food import CreateFood
+from ormconnector.read_food import ReadFoods, ReadFood
+from ormconnector.update_food import UpdateFoodAmount, UpdateFoodPrice, UpdateFoodVat
+from ormconnector.delete_food import DeleteFood
 
 app = FastAPI()
 
@@ -26,7 +26,7 @@ async def read_food(food_id):
 @app.post("/foods", status_code=201)
 async def create_food(id, name, amount, price, vat, category):
     new_food = CreateFood(id, name, amount, price, vat, category)
-    return {"food": new_food}
+    return {"food": new_food.new_food}
 
 
 # Update amount
