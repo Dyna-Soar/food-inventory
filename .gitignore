@@ -1,4 +1,5 @@
 /__pycache__/
+ormconnector/__pycache__/
 env/
 venv/
 .idea/
