@@ -4,4 +4,6 @@ env/
 venv/
 .idea/
 database.db
+tests/__pycache__/
+.pytest_cache/
 tests/
