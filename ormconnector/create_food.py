@@ -1,3 +1,4 @@
+from fastapi.encoders import jsonable_encoder
 from .db_connector import engine, Session
 from .models_orm import Food
 
@@ -16,4 +17,4 @@ class CreateFood:
         local_session = Session(bind=engine)
         local_session.add(new_food)
         local_session.commit()
-        self.new_food = local_session.get(Food, id)
+        self.new_food = jsonable_encoder(local_session.get(Food, id))
