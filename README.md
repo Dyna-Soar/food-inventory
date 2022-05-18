@@ -1,4 +1,6 @@
-## This is a food inventory api using FastAPI and sqlalchemy
+# This is a food inventory api using FastAPI and sqlalchemy
+
+## This API let users create, read and update a supermarket inventory
 
 ### To create db and tables run: `python ormconnector/create_db.py`
 
